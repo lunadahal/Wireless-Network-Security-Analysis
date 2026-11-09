@@ -67,7 +67,7 @@ This demonstrates the workflow:
 
 `ALFA adapter → Airodump-ng capture → Wireshark analysis`
 
-## Screenshot 4: Beacon Frame Inspection || [View Screenshot 4](screenshot04-Beacon Frame Inspection.PNG)
+## Screenshot 4: Beacon Frame Inspection || [View Screenshot 4](screenshot04-Beacon%20Frame%20Inspection.PNG)
 
 Frame Type: IEEE 802.11 Beacon  
 Destination: Broadcast  
