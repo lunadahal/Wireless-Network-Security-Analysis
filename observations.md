@@ -1,7 +1,7 @@
 # Wireless Network Security Analysis Observations
 This lab documents wireless network discovery and IEEE 802.11 traffic analysis using an ALFA MT7612U WiFi adapter, Airodump-ng, and Wireshark in an authorized environment.
 
-## Screenshot 1: Wireless Environment Discovery
+## Screenshot 1: Wireless Environment Discovery   || [View Screenshot 1](screenshots01-airodump-nearby-access-points.PNG)
 
 ### WIRESTAR.NET SECURE
 BSSID: A8:0B:FB:7C:DA:80  
@@ -34,7 +34,7 @@ SECURE and GUEST used WPA2 with CCMP encryption and PSK authentication, while RE
 
 The scan also shows that the wireless environment used multiple access point radios with different BSSIDs and signal levels.
 
-## Screenshot 2: Targeted Wireless Capture
+## Screenshot 2: Targeted Wireless Capture  || [View Screenshot 2](screenshot02-airodump-targetcapture.PNG)
 
 Target SSID: WIRESTAR.NET GUEST  
 Target BSSID: A8:0B:FB:7C:DA:81  
@@ -48,7 +48,7 @@ Airodump-ng was configured to monitor one specific access point using its BSSID 
 
 This capture mainly contained wireless management and control traffic and was saved for analysis in Wireshark.
 
-## Screenshot 3: IEEE 802.11 Frame Analysis
+## Screenshot 3: IEEE 802.11 Frame Analysis || [View Screenshot 3](screenshot03-Wireshark-Packet-List.PNG)
 
 Tool: Wireshark  
 Capture: `guest_capture-01.cap`
@@ -67,7 +67,7 @@ This demonstrates the workflow:
 
 `ALFA adapter → Airodump-ng capture → Wireshark analysis`
 
-## Screenshot 4: Beacon Frame Inspection
+## Screenshot 4: Beacon Frame Inspection || [View Screenshot 4](screenshot04-Beacon Frame Inspection.PNG)
 
 Frame Type: IEEE 802.11 Beacon  
 Destination: Broadcast  
@@ -79,7 +79,7 @@ A beacon frame was inspected in Wireshark. It showed the access point advertisin
 
 Wireshark also provided access to the frame structure and raw packet bytes.
 
-## Screenshot 5: Targeted Client Traffic Capture
+## Screenshot 5: Targeted Client Traffic Capture || [View Screenshot 5](screenshot05-Targeted-Client-Traffic-Capture.PNG)
 
 SSID: WIRESTAR.NET SECURE  
 BSSID: A8:0B:FB:BC:DA:80  
@@ -93,7 +93,7 @@ The BSSID and channel used by the Windows test laptop were identified and used f
 
 The laptop appeared in the STATION list, confirming that traffic involving the authorized client was being observed. The increasing #Data counter showed active wireless data communication associated with the access point.
 
-## Screenshot 6: Wireless Data Frame Analysis
+## Screenshot 6: Wireless Data Frame Analysis || [View Screenshot 6](screenshot06-Wireshark-Wireless-Data-Frames.PNG)
 
 Tool: Wireshark  
 Filter: `wlan.fc.type == 2`
@@ -110,7 +110,7 @@ Monitor mode provides visibility into wireless client activity.
 
 However, capturing wireless frames does not automatically reveal protected application content. WPA2 protects the wireless link, while protocols such as HTTPS can provide additional encryption at higher layers.
 
-## Screenshot 7: Client Specific Wireless Traffic
+## Screenshot 7: Client Specific Wireless Traffic || [View Screenshot 7](screenshot07-Client-Specific-Wireless-Traffic.PNG)
 
 Tool: Wireshark  
 Filter: `wlan.addr == 0c:54:15:xx:xx:xx && wlan.fc.type == 2`
